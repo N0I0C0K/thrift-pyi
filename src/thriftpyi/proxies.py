@@ -170,7 +170,8 @@ class TSpecProxy:
 
     def _remove_self_module(self, pytype: str) -> str:
         left_type, sep, right_type = pytype.partition(",")
-        # Due to complex type, such as Dict[some_module.TypeA, some_module.TypeB], recursively deal with the first and second parts
+        # Due to complex type, such as Dict[some_module.TypeA, some_module.TypeB]
+        # recursively deal with the first and second parts
         if right_type != "":
             return (
                 self._remove_self_module(left_type)

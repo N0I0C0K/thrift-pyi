@@ -162,6 +162,7 @@ class Field:
             return ast.Assign(
                 targets=[ast.Name(id=self.name, ctx=ast.Store())],
                 value=ast.Constant(value=self.value),
+                lineno=0,
             )
 
         if not self.required:
